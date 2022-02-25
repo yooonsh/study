@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스제어</title>
+    <style>
+        body{
+            padding: relative;
+            background-color: #000;
+            cursor: none;
+        }
+        h1{
+            color: #fff;
+        }
+        .cursor_item{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            top: 0;
+            left: 0;
+        }
+    </style>
+    <script>
+        let cursor_item;
+        let h1;
+        let x = 0;
+        let y = 0;
+        let mx = 0;
+        let my = 0;
+        let speed = 0.05;
+
+        window.onload = function(){
+            h1 = document.getElementsByTagName("h1")[0];
+            cursor_item = document.getElementsByClassName("cursor_item")[0];
+            window.addEventListener("mousemove", mouseFunc, false);
+
+            function mouseFunc(e){
+                x = e.clientX;
+                y = e.clientY;
+                //console.log(e.clientX, e.clientY)
+            }
+
+            loop();
+        }
+
+        function loop(){
+            //console.log(i += 1);
+            mx += (x - mx) * speed;
+            my += (y - my) * speed;            
+            h1.innerHTML = "x:" + x + " mx:" + mx;
+            cursor_item.style.transform = "translate(" + mx + "px," + my + "px)";
+            window.requestAnimationFrame(loop);
+        }
+    </script>    
+</head>
+<body>
+    <h1>test</h1>
+    <div class="cursor_item"></div>
+</body>
+</html>
