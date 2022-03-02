@@ -164,4 +164,11 @@ console.log(animals)
 //"B"로 시작되는 아이템인 "Baboon"부터 "Bison"까지 가져와 새로운 어레이에 저장하시오
 let newList = animals.slice(animals.indexOf("Baboon"),animals.indexOf("Bison")+1)
 console.log(newList)
+ 
+
+
+
+
+
+
 
