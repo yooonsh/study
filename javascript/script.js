@@ -1,3 +1,5 @@
+
+console.log("==========================배열 시작=============================")
 let fruit = ["banana", "apple", "grape", "mango"]
 
 console.log(fruit)
@@ -165,6 +167,30 @@ console.log(animals)
 let newList = animals.slice(animals.indexOf("Baboon"),animals.indexOf("Bison")+1)
 console.log(newList)
  
+
+console.log("==========================객체 시작=============================")
+let patient = {
+    name: "a",
+    age: 12
+}
+console.log(patient)
+console.log(patient.age)
+console.log(patient["name"])
+patient.name = "b"
+patient["age"] = 20
+console.log(patient)
+
+let patientList = [
+    {name: "a", age: 12},
+    {name: "b", age: 20}
+]
+console.log(patientList)
+console.log("첫번째 환자는: ", patientList[0])
+console.log("첫번째 환자의 나이는?: ", patientList[0]["age"])
+
+console.log("두번째 환자의 이름은?", patientList[1].name)
+
+
 
 
 
