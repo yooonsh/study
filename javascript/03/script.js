@@ -62,4 +62,17 @@ let smallestNumber = findSmallestElement([100,200,3,0,2,1])
 console.log(smallestNumber)
 
 
+console.log("==========================6번=============================")
 
+let unit = [50000,10000,5000,1000,500,100]
+function changeCalculate(money) {
+  for(let i=0;i<unit.length;i++){
+    
+      let num = Math.floor(money / unit[i])
+      console.log(unit[i]+"X"+num)
+      money = money - (unit[i]*num)
+    
+  }
+}
+
+changeCalculate(12300)
