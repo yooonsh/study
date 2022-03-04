@@ -15,9 +15,13 @@ let resetBtn = document.getElementById("resetBtn")
 let chances = 5
 let gameOver = false
 let chanceArea = document.getElementById("chanceArea")
+let history = []
 
 playBtn.addEventListener("click",play) // play 함수를 매개변수처럼 넘김
 resetBtn.addEventListener("click",reset) 
+userInput.addEventListener("focus",function(){
+    userInput.value = "";
+}) 
 
 let computerNum = 0
 
@@ -29,15 +33,29 @@ function pickRandomNum(){
 function play(){
     let userValue = userInput.value
 
+    if(userValue < 1 || userValue > 100){
+        resultArea.textContent = "1~100 범위 내의 숫자를 입력해주세요"
+        return;
+    }
+
+    if(history.includes(userValue)){
+        resultArea.textContent = "이미 입력한 숫자입니다. 다시 입력해주세요."
+        return;
+    }
+
     chances -- ;
     chanceArea.textContent = `남은 기회: ${chances}번`
+
     if(userValue < computerNum){
         resultArea.textContent = "UP!!"
     }else if(userValue > computerNum){
         resultArea.textContent = "Down!!"
     }else{
         resultArea.textContent = "맞췄습니다!!"
+        gameOver = true
     }
+
+    history.push(userValue)
 
     if(chances == 0){
         gameOver = true
@@ -46,6 +64,7 @@ function play(){
     if(gameOver == true){
         playBtn.disabled = true
     }
+
 }
 
 function reset(){
