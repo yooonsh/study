@@ -1,1 +1,1 @@
-https://yooonsh.netlify.app/
+https://ysh-study.netlify.app
