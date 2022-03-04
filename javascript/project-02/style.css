@@ -1,0 +1,7 @@
+body{margin: 0; background-color: rgb(92, 92, 92);}
+.container{display: table; width: 100%; max-width: 500px; height: 100vh; margin: 0 auto; background-color: #fff;}
+.taskArea{border: 1px solid #ddd;}
+.taskTabs{display: flex; position: relative; border-bottom: 1px solid #ddd;}
+.taskTabs div{padding: 10px;}
+#underLine{position: absolute; left: 0; top: 40px; width: 50px; height: 4px; padding: 0; background-color: black;}
+.task{display: flex; justify-content: space-between;}
