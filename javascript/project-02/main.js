@@ -7,3 +7,28 @@
 // 전체탭을 누르면 다시 전체아이템으로 돌아옴
 
 let taskInput = document.getElementById("taskInput");
+let addBtn = document.getElementById("addBtn");
+let taskList =[]
+
+addBtn.addEventListener("click",addTask)
+function addTask(){
+    let taskContent = taskInput.value
+    taskList.push(taskContent)
+    render();
+}
+
+function render(){
+    let resultHTML = ''
+    for(i=0;i<taskList.length;i++){
+        resultHTML += `<div class="task">
+        <div>${taskList[i]}</div>
+        <div>
+            <button>check</button>
+            <button>delete</button>
+        </div>
+    </div>`
+    }
+
+
+    document.getElementById("taskBoard").innerHTML = resultHTML
+}
