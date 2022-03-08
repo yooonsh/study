@@ -85,8 +85,58 @@ function getCalendar(first, ...rest) {
       rest[2] === undefined
     );
   }
-  console.log(getCalendar("January","Febuary","March")); // 여기를 바꾸시오
+console.log(getCalendar("January","Febuary","March")); // 여기를 바꾸시오
 
-  
+console.log("7. 두 어레이들중 최소값을 찾는 함수를 완성하시오")
 
-  
+// function getMinimum(){
+//     let a= [45,23,78]
+//     let b = [54,11,9]
+//     return Math.min() // 여기를 바꾸시오
+// }
+// console.log(getMinimum())
+
+function getMinimum(){
+    let a= [45,23,78]
+    let b = [54,11,9]
+    return Math.min(...a,...b) // 여기를 바꾸시오
+}
+console.log(getMinimum())
+
+console.log("8. 다음의 함수를 화살표 함수로 바꾸시오")
+
+// function sumNumber() {
+//     // 여기서부터 바꾸시오
+//     const sum = function (a, b) {
+//         return a + b;
+//     };
+//     return sum(40, 10);
+// }
+
+function sumNumber() {
+    // 여기서부터 바꾸시오 
+    const sum = (a, b)=> a+b
+    return sum(40, 10);
+}
+
+console.log("9. 다음함수를 화살표 함수로 바꾸시오")
+
+// function sumNumber() {
+//     //여기를 바꾸시오
+//     return addNumber(1)(2)(3);
+//     function addNumber(a) {
+//         return function (b) {
+//             return function (c) {
+//                 return a + b + c;
+//             };
+//         };
+//     }
+// }
+// console.log(sumNumber());
+
+function sumNumber() {
+    //여기를 바꾸시오
+    let addNumber=(a)=>(b)=> (c)=> a + b + c;
+    return addNumber(1)(2)(3);
+}
+console.log(sumNumber())
