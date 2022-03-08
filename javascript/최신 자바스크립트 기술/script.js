@@ -180,7 +180,7 @@ let data2 = names.map((item)=>{
 })
 console.log(data2)
 
-console.log("2. filter")
+console.log("2. filter") // 조건에 해당하는 모든 값 출력
 
 //이름에 a를 포함한 사람들을 출력하시오.
 let data3 = names.filter((item)=>{
@@ -208,5 +208,20 @@ let data5 = names.some((item)=>{
     return splintName.some((eachName)=>eachName.toLocaleLowerCase().includes('p')) //toLocaleLowerCase() 소문자로 변환
 })
 console.log(data5)
+
+console.log("4. every") //모든 값에 조건 true/false
+
+//모두의 전체 이름의 길이가 20자 이상인가?
+console.log(names.every((item)=>item.length>=20))
+//모두의 이름에 a 가 포함되어 있는가?
+console.log(names.every((item)=>item.toLocaleLowerCase().includes('a')))
+
+console.log("5. find") //조건에 해당하는 값 처음 한개 값 출력
+
+//전체 이름의 길이가 20자 이상인 사람을 찾으시오.
+console.log(names.find((item)=>item.length>=20))
+//미들네임이 포함되어있는 사람을 찾으시오.(예-Steven Paul Jobs)
+console.log(names.find((item)=>item.split(" ").length>=3))
+
 
 
