@@ -223,5 +223,7 @@ console.log(names.find((item)=>item.length>=20))
 //미들네임이 포함되어있는 사람을 찾으시오.(예-Steven Paul Jobs)
 console.log(names.find((item)=>item.split(" ").length>=3))
 
+console.log("6. findIndex") //조건에 해당하는 index 값 출력
 
-
+console.log(names.findIndex((item)=>item.length>=20))
+console.log(names.findIndex((item)=>item.split(" ").length>=3))
