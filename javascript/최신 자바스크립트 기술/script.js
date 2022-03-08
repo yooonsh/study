@@ -26,12 +26,24 @@ console.log("3. 다음 코드를 Destructoring을 이용하여 해결하시오")
 // }
 // calculate({a:1,b:2,c:3})
 
-function calculate(a,b,c){   
+function calculate(obj){ 
+    let {a,b,c}=obj   
     return a+b+c
 }
-console.log(calculate(1,2,3))
+calculate({a:1,b:2,c:3})
 
 console.log("4. 다음 문제에 정답이 true가 나오게 하시오")
+
+// let name="noona store"
+// let fruits = ["banana","apple","mango"]
+// let address={
+//     country:"Korea",
+//     city:"Seoul"
+// }
+// function findStore(obj){
+//     return name="noona store" && city == "Seoul"
+// }
+// console.log(findStore({name,fruits,address}))
 
 let name="noona store"
 let fruits = ["banana","apple","mango"]
@@ -41,10 +53,40 @@ let address={
 }
 
 function findStore(obj){
-    return name="noona store" && address.city == "Seoul"
+   let {name,address:{city}} = obj
+    return name=="noona store" && city=="Seoul"
 }
+
 console.log(findStore({name,fruits,address}))
 
+console.log("5. 다음과같이 프린트되게 코드를 바꾸시오")
 
+// function getNumber(){
+//     let array = [1,2,3,4,5,6]    // 여기서부터 바꾸시오
+//     return {first,third,forth}
+// }
+// console.log(getNumber()) //  결과값 { first: 1, third: 3, forth: 4 }
 
+function getNumber(){
+    let array = [1,2,3,4,5,6]
+    let [first,,third,forth]=array
+    
+    return {first,third,forth}
+}
+console.log(getNumber())
 
+console.log("6. 다음의 결과가 true가 되게 하시오")
+
+function getCalendar(first, ...rest) {
+    return (
+      first === "January" &&
+      rest[0] === "Febuary" &&
+      rest[1] === "March" &&
+      rest[2] === undefined
+    );
+  }
+  console.log(getCalendar("January","Febuary","March")); // 여기를 바꾸시오
+
+  
+
+  
