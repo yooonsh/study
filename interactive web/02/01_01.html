@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>a</title>
+    <title>interactive</title>
     <style>
         .box-container{
             display: flex;
@@ -24,6 +24,77 @@
             transform: rotate(30deg);
             transform-origin: 100% 100%;
         }
+        .world{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80vw;
+            height: 80vh;
+            background: #fff000;
+            perspective: 500px; /*원근감속성*/
+        }
+
+        .card{
+            position: relative;
+            width: 100px;
+            height: 150px;
+            margin: 1em;
+            transition: 1s;
+            transform: rotateY(0deg);
+            transform-style: preserve-3d;
+            transform-origin: right;
+        }
+
+        .card-side{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100px;
+            height: 150px;
+            margin: -75px 0 0 -50px;
+            border-radius: 0.5em;
+            font-size: 1.5rem;
+            transition: 1s;
+            backface-visibility: hidden;
+        }
+
+        .card-side-front{
+            z-index: 1;
+            background: white;
+        }
+        .card-side-back{
+            background: red;
+            transform: rotateY(180deg);
+        }
+
+        .world:hover .card-side-front{
+            transform: rotateY(180deg);
+        }
+
+        .world:hover .card-side-back{
+            transform: rotateY(360deg);
+        }
+
+        .container{
+            display: flex;
+            /* flex-direction: row; */
+            /* justify-content: flex-end; */
+            /* align-items: flex-end; */
+            height: 80vh;
+            background: gray;
+        }
+        .item{
+            /*flex-grow: 1; 여백의 비율*/
+            /* flex-basis: 0; */
+            flex: 1; /*축약형*/
+            padding: 2em;
+            border: 3px solid black;
+            background: white;
+        }
+
     </style>
      
 </head>
@@ -41,5 +112,18 @@
     </div>
 
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit optio maiores amet commodi ipsum suscipit at, ut ipsa non quis itaque architecto voluptatem, tenetur repellat culpa doloremque, neque eos? Deserunt repellendus dolor in laboriosam, iusto architecto doloribus quod aperiam eos voluptates possimus quaerat recusandae sint incidunt culpa eum maiores exercitationem corrupti voluptatum esse consequatur soluta sapiente illum quos! Saepe nobis quasi reiciendis perspiciatis numquam soluta et accusantium dolore modi cumque iure, qui recusandae impedit ea ex nemo consectetur ut, vero optio voluptatibus tempore. Rem eos alias provident sunt mollitia repellendus ab. Placeat dolorum non quos, inventore culpa quis at neque?</p>
+
+    <div class="world">
+        <div class="card-side card-side-front">F</div>
+        <div class="card-side card-side-back">B</div>
+    </div>
+
+    <div class="container">
+        <div class="item">AAA</div>
+        <div class="item">B</div>
+        <div class="item">CCCCCC</div>
+        <div class="item">DDD</div>
+        <div class="item">E</div>
+    </div>
 </body>
 </html>
