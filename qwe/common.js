@@ -1,7 +1,7 @@
 
     
     //콜라보
-    if(jQuery('.collabo_banner a').length > 1 ) {
+    if(jQuery('.collabo_banner .swiper-slide').length > 1 ) {
     
     
     
