@@ -1,7 +1,7 @@
 
     
     //콜라보
-    if(jQuery('.collabo_banner .swiper-slide').length > 1 ) {
+    
     
     
     
@@ -21,17 +21,9 @@
 		speed: 700,
         loopedSlides: 1,        
         freeMode : true,
-
-
     });
-    
-        jQuery('.collabo_banner .swiper-button-next, .collabo_banner .swiper-button-prev').css('opacity','1');
-        
-    } else {
-    
-        jQuery('.collabo_banner .swiper-button-next, .collabo_banner .swiper-button-prev').css('opacity','0');
-    
-    }
+
+   
     
     
     
